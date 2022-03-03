@@ -1,13 +1,12 @@
 #!/bin/bash
-# home_files=(.bashrc .zshrc)
-my_array=(foo bar)
+home_files=( ".bashrc" ".zshrc" )
 echo $home_files
-config_files=$(ls ~/dotfiles/.config/)
-echo $config_files
+config_files=( nvim sxhkd bspwm alacritty starship )
 echo "----- Installing Dotfiles -----"
 cd
 ln -s ~/dotfiles/.bashrc .bashrc
 ln -s ~/dotfiles/.zshrc .zshrc
+ln -s ~/dotfiles/.gitconfig .gitconfig
 
 #create the .env_variables file
 if test -f ~/.env_variables; then
@@ -22,6 +21,8 @@ fi
 
 cd ~/.config
 #create symlinks for each file in the .config folder
-ln -s ~/dotfiles/.config/nvim nvim
-dir=$(pwd)
-echo $dir
+for i in "${config_files[@]}"
+do
+  echo "$i"
+  ln -s ~/dotfiles/.config/"$i" ~/.config/"$i"
+done

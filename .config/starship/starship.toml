@@ -1,0 +1,27 @@
+add_newline = false 
+
+# [character]
+# success_symbol = "[ﬦ](bold green)"
+# error_symbol = "[ﬦ](bold red)"
+
+[package]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+[lua]
+symbol= " "
+
+[git_branch]
+symbol= " "
+
+[cmake]
+symbol = "卑 "
+
+[golang]
+symbol = "ﳑ "
+
