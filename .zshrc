@@ -3,12 +3,14 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 export TERM="xterm-256color"
 
-plugins=(git sudo)
+plugins=(zoxide git sudo zsh-autosuggestions zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 ZSH_THEME=""
 eval "$(starship init zsh)"
 
+#Plugin config
+bindkey '^ ' autosuggest-accept
 #Aliases
 alias sl="exa --icons --sort type"
 alias ls="exa --icons --sort type"
@@ -18,7 +20,7 @@ alias tree="exa --icons --git -a --tree -s type -I '.git|node_modules|bower_comp
 alias e=exit
 alias c=clear
 alias n=nvim
-
+alias cd="echo use z you nitwit"
 
 
 #Env Variables

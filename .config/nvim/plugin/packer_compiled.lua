@@ -239,10 +239,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: neoscroll.nvim
-time([[Config for neoscroll.nvim]], true)
-require "plugins.configs.neoscroll"
-time([[Config for neoscroll.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require "plugins.configs.bufferline"
+time([[Config for bufferline.nvim]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 require "plugins.configs.colorizer"
@@ -259,6 +259,10 @@ time([[Config for indent-blankline.nvim]], false)
 time([[Config for nvim-tree.lua]], true)
 require "plugins.configs.nvim-tree"
 time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require "plugins.configs.treesitter"
+time([[Config for nvim-treesitter]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 require "plugins.configs.comment"
@@ -271,26 +275,23 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for toggleterm.nvim]], true)
 require "plugins.configs.toggleterm"
 time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require "plugins.configs.treesitter"
-time([[Config for nvim-treesitter]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require "plugins.configs.lualine"
 time([[Config for lualine.nvim]], false)
+-- Config for: neoscroll.nvim
+time([[Config for neoscroll.nvim]], true)
+require "plugins.configs.neoscroll"
+time([[Config for neoscroll.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require "plugins.configs.telescope"
 time([[Config for telescope.nvim]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require "plugins.configs.bufferline"
-time([[Config for bufferline.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
