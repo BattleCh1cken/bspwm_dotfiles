@@ -1,7 +1,7 @@
 #!/bin/bash
 home_files=( .bashrc .zshrc )
 echo $home_files
-config_files=( nvim sxhkd bspwm alacritty starship )
+config_files=( nvim sxhkd bspwm alacritty starship rofi )
 echo "----- Installing Dotfiles -----"
 ln -s ~/dotfiles/.bashrc ~/
 ln -s ~/dotfiles/.zshrc ~/ 
