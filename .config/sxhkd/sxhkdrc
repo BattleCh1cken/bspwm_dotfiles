@@ -8,7 +8,7 @@ alt + Return
 
 # program launcher
 alt + d
-  dmenu_run
+  sh ~/.config/rofi/launchers/text/launcher.sh 
 # show open window
 super + ctrl + d
 	rofi -modi drun -show window -line-padding 4 \
