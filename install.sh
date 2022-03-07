@@ -30,7 +30,7 @@ done
 #oh my zsh
 if test -f ~/.oh-my-zsh/oh-my-zsh.sh; then
   echo "oh my zsh is installed."
-else sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh  
 fi
 
 #zsh-autosuggestions
