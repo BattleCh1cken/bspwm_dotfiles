@@ -30,13 +30,13 @@ done
 #oh my zsh
 if test ~/.oh-my-zsh/oh-my-zsh.sh; then
   echo "oh my zsh is installed."
-else sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && echo "Installing oh my zsh"
+else sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #zsh-autosuggestions
 if test ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/; then
   echo "zsh-autosuggestions is installed"
-else git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 
+else git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && echo "Installing zsh-autosuggestions" 
 #zsh-completions
 if test ~/.oh-my-zsh/custom/plugins/zsh-completions; then
   echo "zsh-completions is installed"
-else   git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+else   git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions && echo "Installing zsh completions"

@@ -16,3 +16,7 @@ alias n=nvim
 #Env variables
 
 source ~/.env_variables
+
+#System specific config
+
+source ~/.extra
