@@ -1,4 +1,5 @@
 #!/bin/bash
+#todo: add a loop for this variable
 home_files=( .bashrc .zshrc )
 echo $home_files
 config_files=( nvim sxhkd bspwm alacritty starship rofi polybar )
