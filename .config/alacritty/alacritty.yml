@@ -1,18 +1,18 @@
 font:
   normal:
-    family: DejaVuSansMono Nerd Font 
+    family: Iosevka Nerd Font 
     style: Regular
 
   bold:
-    family: DejaVuSansMono Nerd Font
+    family: Iosevka Nerd Font
     style: Bold
 
   italic:
-    family: DejaVuSansMono Nerd Font 
+    family: Iosevka Nerd Font 
     style: Italic
 
   bold_italic:
-    family: DejaVuSansMono Nerd Font 
+    family: Iosevka Nerd Font 
     style: Bold Italic
 
   size: 8
