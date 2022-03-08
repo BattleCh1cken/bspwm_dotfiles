@@ -1,6 +1,6 @@
 local ok, lsp_config = pcall(require, "lspconfig")
 if not ok then
-    return
+	return
 end
 
 local installer_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
@@ -9,42 +9,40 @@ if not installer_ok then
 end
 
 local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "" },
+	{ name = "DiagnosticSignInfo", text = "" },
 }
 
 local config = {
-    -- disable virtual text
-    virtual_text = false,
-    -- show signs
-    signs = {
-      active = signs,
-    },
-    update_in_insert = true,
-    underline = true,
-    severity_sort = true,
-    float = {
-      focusable = false,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
-    },
-  }
-
+	-- disable virtual text
+	virtual_text = false,
+	-- show signs
+	signs = {
+		active = signs,
+	},
+	update_in_insert = true,
+	underline = true,
+	severity_sort = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
+}
 
 vim.diagnostic.config(config)
 
 for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-  end
-
+	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
 
 local on_attach = function(client, bufnr)
-  	local function buf_set_keymap(...)
+	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
 	local function buf_set_option(...)
@@ -53,11 +51,11 @@ local on_attach = function(client, bufnr)
 
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  --null-ls
-  local is_null_ls = client.name == "null-ls"
-  client.resolved_capabilities.document_formatting = is_null_ls
-  client.resolved_capabilities.document_range_formatting = is_null_ls
-  --set keybinds
+	--null-ls
+	local is_null_ls = client.name == "null-ls"
+	client.resolved_capabilities.document_formatting = is_null_ls
+	client.resolved_capabilities.document_range_formatting = is_null_ls
+	--set keybinds
 	local opts = { noremap = true, silent = true }
 
 	buf_set_keymap("n", "<leader>ld", ":lua vim.lsp.buf.definition()<CR>", opts) --> jumps to the definition of the symbol under the cursor
@@ -73,12 +71,12 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.formatting()<CR>", opts) --> formats the current bufferg
 end
 
-
 local servers = {
-  "pyright",
-  "eslint",
-  "clangd",
-  "sumneko_lua",
+	"pyright",
+	"eslint",
+	"clangd",
+	"sumneko_lua",
+	"bashls",
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
