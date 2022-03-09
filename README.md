@@ -6,9 +6,9 @@ WM: Bspwm\
 Launcher: Rofi\
 Bar: Polybar\
 Editor: Neovim\
-Shell:Zsh\
+Shell:Zsh
 
-Fonts: Iosevka nerd font\
+Fonts: Iosevka nerd font
 
 
 -----Credits-----
