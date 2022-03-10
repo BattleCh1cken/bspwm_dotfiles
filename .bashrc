@@ -4,6 +4,7 @@
 source ~/.aliases
 
 #Env variables
+export EDITOR="nvim"
 source ~/.env_variables
 
 #System specific config
