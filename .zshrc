@@ -1,8 +1,11 @@
 export EDITOR="nvim"
 export TERM="xterm-256color"
 
-
-ZSH_THEME=""
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zshhistory
+setopt appendhistory
 
 #Plugin config
 bindkey '^ ' autosuggest-accept
