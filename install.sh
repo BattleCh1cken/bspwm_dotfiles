@@ -1,6 +1,6 @@
 #!/bin/bash
 home_files=( .bashrc .zshrc .xinitrc .gitconfig .aliases)
-config_files=( nvim sxhkd bspwm alacritty starship rofi polybar neofetch ranger)
+config_files=( nvim sxhkd bspwm alacritty starship rofi polybar neofetch ranger kitty)
 echo "----- Installing Dotfiles -----"
 
 #create the .env_variables file
