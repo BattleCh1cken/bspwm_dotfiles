@@ -7,7 +7,7 @@ Launcher: Rofi\
 Bar: Polybar\
 Editor: Neovim\
 Shell: Zsh\
-Terminal: Alacritty
+Terminal: Kitty 
 
 
 Fonts: Iosevka nerd font
