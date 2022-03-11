@@ -7,9 +7,6 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zshhistory
 setopt appendhistory
 
-#Plugin config
-bindkey '^ ' autosuggest-accept
-
 
 source ~/.aliases
 source ~/.extra
@@ -17,8 +14,13 @@ source ~/.extra
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 source ~/.env_variables
 
+
+#Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/autojump/autojump.zsh 2>/dev/null
 
 eval "$(starship init zsh)"
+
+#Plugin config
+bindkey '^ ' autosuggest-accept
