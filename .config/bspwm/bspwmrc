@@ -1,5 +1,4 @@
 #! /bin/sh
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
@@ -30,8 +29,6 @@ bspc config active_border_color         "#4c566a"
 #
 # Autostart
 #
-# Set display from arandr saved script
-sh ~/.screenlayout/monitor.sh &
 # Bar
 ~/.config/polybar/launch.sh &
 # Notifications
@@ -43,9 +40,9 @@ nitrogen --restore &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
 # Picom
-# picom -CGb &
+picom -CGb --experimental-backends &
 # Network Applet
-nm-applet --indicator &
+# nm-applet --indicator &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
