@@ -8,7 +8,7 @@
  */
 
 configuration {
-    font: 							"Iosevka Nerd Font 12";
+    font: 							"Jetbrains Mono Nerd Font 12";
     fixed-num-lines: 				true;
     show-icons: 					false;
     sidebar-mode: 					true;

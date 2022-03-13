@@ -14,6 +14,7 @@ bspc config focus_follows_pointer true
 
 bspc rule -a firefox desktop='^2'
 bspc rule -a discord desktop='^6'
+bspc rule -a mailspring desktop='^6'
 bspc rule -a elisa desktop='^10'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Yad state=floating
@@ -37,8 +38,6 @@ bspc config active_border_color         "#4c566a"
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
 nitrogen --restore &
-# Dex
-dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
 # Picom
 picom -CGb --experimental-backends &
 # Network Applet
@@ -49,4 +48,6 @@ xsetroot -cursor_name left_ptr &
 
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
-
+#Apps
+discord &
+mailspring &
