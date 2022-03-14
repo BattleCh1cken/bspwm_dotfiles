@@ -15,14 +15,10 @@ lightdm-webkit2-greeter
 lightdm-webkit-theme-litarvan
 lxappearance
 qt5ct
-gsimplecal
 xautolock
 xclip
-scrot
 tumbler
 jq
-w3m
-nano
 viewnior
 pavucontrol
 parcellite
@@ -33,3 +29,4 @@ gtk2-perl
 xfce4-power-manager
 playerctl
 xsettingsd
+flameshot
