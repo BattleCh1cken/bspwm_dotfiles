@@ -1,5 +1,5 @@
 export EDITOR="nvim"
-export TERM="xterm-256color"
+# export TERM=xterm-256color
 
 # History in cache directory:
 HISTSIZE=10000
