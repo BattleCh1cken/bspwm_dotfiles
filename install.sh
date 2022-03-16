@@ -1,4 +1,47 @@
 #!/bin/bash
+
+installCore(){
+while read p; do
+  echo "Installing $p"
+  sudo pacman -S $p
+done <~/dotfiles/pkgs/core.txt
+}
+
+installYay(){
+  cd ~
+  git clone "https://aur.archlinux.org/yay.git"
+  cd ~/yay
+  makepkg -si --noconfirm
+
+}
+installChaotic(){
+  pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+  pacman-key --lsign-key FBA220DFC880C036
+  pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+  if grep -q chaotic-aur /etc/pacman.conf; then
+    echo "chaotic-aur already installed"
+  else 
+    echo "[chaotic-aur]" >> /etc/pacman.conf
+    echo " Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf 
+fi
+}
+
+installAur(){
+while read p; do
+  echo "Installing $p"
+  yay -S --noconfirm --needed $p
+done <~/dotfiles/pkgs/aur.txt
+}
+installBspwm(){
+while read p; do
+  echo "Installing $p"
+  pacman -S --noconfirm --needed $p
+done <~/dotfiles/pkgs/bspwm.txt
+}
+linkDotfiles(){
+sh ~/dotfiles/link.sh
+}
+
 echo -n "Choose the option you want\n"
 echo -n "0. All of the below\n"
 echo -n "1. Install core packages\n"
@@ -25,80 +68,4 @@ case "$choice" in
   ;;
 esac
 
-installCore(){
-while read p; do
-  echo "Installing $p"
-  sudo pacman -S $p
-done <~/dotfiles/pkgs/core.txt
-}
 
-installYay(){
-  cd ~
-  git clone "https://aur.archlinux.org/yay.git"
-  cd ~/yay
-  makepkg -si --noconfirm
-
-}
-installChaotic(){
-  echo "installing chaotic aur"
-}
-
-installAur(){
-while read p; do
-  echo "Installing $p"
-  yay -S --noconfirm --needed $p
-done <~/dotfiles/pkgs/aur.txt
-}
-installBspwm(){
-while read p; do
-  echo "Installing $p"
-  pacman -S --noconfirm --needed $p
-done <~/dotfiles/pkgs/bspwm.txt
-}
-linkDotfiles(){
-sh ~/dotfiles/link.sh
-}
-# while true; do
-#     read -p "Install core packages?" yn
-#     case $yn in
-#         [Yy]* ) installcore; break;;
-#         [Nn]* ) exit;;
-#         * ) echo "Please answer yes or no.";;
-#     esac
-# done
-#
-# while true; do
-#     read -p "Install yay aur helper?" yn
-#     case $yn in
-#         [Yy]* ) installYay; break;;
-#         [Nn]* ) exit;;
-#         * ) echo "Please answer yes or no.";;
-#     esac
-# done
-#
-# while true; do
-#     read -p "Install chaotic aur?" yn
-#     case $yn in
-#         [Yy]* ) installChaotic; break;;
-#         [Nn]* ) exit;;
-#         * ) echo "Please answer yes or no.";;
-#     esac
-# done
-#
-# while true; do
-#     read -p "Install bspwm packages?" yn
-#     case $yn in
-#         [Yy]* )  installBspwm; break;;
-#         [Nn]* ) exit;;
-#         * ) echo "Please answer yes or no.";;
-#     esac
-# done
-#
-# while true; do
-#     read -p "Link dotfiles?" yn
-#     case $yn in
-#       [Yy]* ) linkDotfiles; break;;
-#         [Nn]* ) exit;;
-#         * ) echo "Please answer yes or no.";;
-#     esac
-# done
