@@ -18,6 +18,8 @@ super + Escape
 
 super + shift + s 
   flameshot gui
+super + e
+  kitty -e ranger &
 #
 # bspwm hotkeys
 #
