@@ -42,27 +42,35 @@ linkDotfiles(){
 sh ~/dotfiles/link.sh
 }
 
-echo -n "Choose the option you want\n"
-echo -n "0. All of the below\n"
-echo -n "1. Install core packages\n"
-echo -n "2. Install yay\n"
-echo -n "3. Install the Chaotic Aur Repo\n"
-echo -n "4. Install the packages needed for Bspwm\n"
-echo -n "5. Link the dotfiles\n"
+# echo -ne "Choose the option you want\n"
+# echo -n "0. All of the below\n"
+# echo -n "1. Install core packages\n"
+# echo -n "2. Install yay\n"
+# echo -n "3. Install the Chaotic Aur Repo\n"
+# echo -n "4. Install the packages needed for Bspwm\n"
+# echo -n "5. Link the dotfiles\n"
+# read choice
+echo -ne "
+0. All of the below
+1. Install core packages
+2. Install yay
+3. Install Chaotic Aur
+4. Install packages needed for Bspwm
+5. Link dotfiles
+"
 read choice
-
 case "$choice" in
-0) echo installCore installYay installChaotic installBspwm linkDotfiles 
+0) installCore installYay installChaotic installBspwm linkDotfiles 
   ;;
-1) echo installCore
+1) installCore
   ;;
-2) echo installYay
+2) installYay
   ;; 
-3) echo installChaotic
+3) installChaotic
   ;;
-4) echo installBspwm
+4) installBspwm
   ;;
-5) echo linkDotfiles
+5) linkDotfiles
   ;;
 *) echo "Please choose a valid option." 
   ;;
