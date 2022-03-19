@@ -18,7 +18,6 @@ setopt appendhistory
 source ~/.aliases
 source ~/.extra
 #Env Variables
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
 source ~/.env_variables
 
 

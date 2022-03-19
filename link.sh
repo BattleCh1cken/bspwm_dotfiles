@@ -1,5 +1,5 @@
 #!/bin/bash
-home_files=( .bashrc .zshrc .xinitrc .gitconfig .aliases .tmux.conf)
+home_files=( .bashrc .zshrc .xinitrc .gitconfig .aliases .tmux.conf .p10k.zsh)
 config_files=( nvim sxhkd bspwm alacritty starship rofi polybar neofetch ranger kitty picom dunst)
 echo "----- Installing Dotfiles -----"
 
