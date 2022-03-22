@@ -27,7 +27,8 @@ return packer.startup(function()
 		requires = { "kyazdani42/nvim-web-devicons" },
 		config = 'require "plugins.configs.lualine"',
 	})
-	use({ "karb94/neoscroll.nvim", config = 'require "plugins.configs.neoscroll"' })
+	-- use({ "karb94/neoscroll.nvim", config = 'require "plugins.configs.neoscroll"' })
+	use("ggandor/lightspeed.nvim")
 	use({ "norcalli/nvim-colorizer.lua", config = 'require "plugins.configs.colorizer"' })
 	--Themes
 	use("shaunsingh/nord.nvim")
