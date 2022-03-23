@@ -5,11 +5,7 @@ return packer.startup(function()
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-	use({
-		"nvim-telescope/telescope.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-		config = 'require "plugins.configs.telescope"',
-	}) -- fuzy finder
+	use({"nvim-telescope/telescope.nvim",requires = { "nvim-lua/plenary.nvim" },config = 'require "plugins.configs.telescope"',}) -- fuzy finder
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require "plugins.configs.treesitter"' }) --syntax highlightin
 	use({ "windwp/nvim-autopairs", config = 'require "plugins.configs.autopairs"' }) --autopairs
 	use({ "numToStr/Comment.nvim", config = 'require "plugins.configs.comment"' }) --faster commenting
@@ -58,4 +54,5 @@ return packer.startup(function()
 		requires = { "nvim-lua/plenary.nvim" },
 		config = 'require "plugins.configs.gitsigns"',
 	})
+  use({"elkowar/yuck.vim", ft = {'yuck'}})
 end)
