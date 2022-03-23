@@ -2,12 +2,7 @@
 home_files=( .bashrc .zshrc .xinitrc .gitconfig .aliases .tmux.conf .p10k.zsh)
 config_files=( nvim sxhkd bspwm alacritty starship rofi polybar neofetch ranger kitty picom dunst)
 echo "----- Installing Dotfiles -----"
-
-#create the .env_variables file
-if test -f ~/.env_variables; then
-  echo "env_variables file exists"
-else touch ~/.env_variables && echo "creating .env_variables file"
-fi
+i
 
 #create the .extra file if it doesn't exist
 if test -f ~/.extra/; then
