@@ -1,8 +1,8 @@
 add_newline = true
 
 format = """
-($username)[@](bold white)($hostname)
-($directory)
+ ($username)[@](bold white)($hostname)
+ ($directory)
 """
 
 right_format = """$all"""
