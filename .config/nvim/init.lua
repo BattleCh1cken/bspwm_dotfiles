@@ -1,5 +1,0 @@
-require("options")
-require("colorscheme")
-require("keymaps")
-require("plugins.init")
-require("lsp.init")

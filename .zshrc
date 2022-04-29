@@ -32,7 +32,6 @@ setopt COMPLETE_IN_WORD
 source ~/.aliases
 source ~/.extra
 #Env Variables
-source ~/.env_variables
 
 
 #Plugins
@@ -43,6 +42,7 @@ source /usr/share/autojump/autojump.zsh 2>/dev/null
 #Plugin config
 bindkey '^ ' autosuggest-accept
 # Init Starship
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)" 
 # Setup Starship custom prompt
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
