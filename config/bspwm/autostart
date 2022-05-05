@@ -1,0 +1,23 @@
+#!/bin/sh
+
+start() {
+  if ! pgrep -f $1 ;
+  then
+    $@&
+  fi 
+}
+
+
+# compositor
+start picom --experimental-backends &
+
+start ~/.config/eww/arin/launch_bar &
+
+start /usr/bin/dunst &
+start /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+start xsetroot -cursor_name left_ptr &
+start xss-lock --transfer-sleep-lock -- i3lock -i ~/Pictures/wallpapers/waves/cat-waves.png --nofork &
+start nitrogen --restore &
+start mailspring &
+start discord &
+

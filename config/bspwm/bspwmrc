@@ -31,25 +31,4 @@ bspc config active_border_color         "#4c566a"
 
 #
 # Autostart
-#
-# Bar
-~/.config/polybar/launch.sh &
-# Notifications
-/usr/bin/dunst &
-# Polkit
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# Wallpaper
-nitrogen --restore &
-# Picom
-picom -CGb --experimental-backends &
-# Network Applet
-# nm-applet --indicator &
-
-# Cursor
-xsetroot -cursor_name left_ptr &
-
-# Low battery notifier
-~/.config/bspwm/scripts/low_bat_notifier.sh
-#Apps
-# discord &
-# mailspring &
+~/.config/bspwm/autostart

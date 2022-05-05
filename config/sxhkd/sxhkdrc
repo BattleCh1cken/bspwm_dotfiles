@@ -144,12 +144,3 @@ XF86MonBrightnessUp
 # And brightness down
 XF86MonBrightnessDown
   xbacklight -dec 5
-# Shortcuts
-super + w 
-  firefox
-
-super + n 
-  thunar  
-
-super + F1
-  ~/.config/bspwm/scripts/keybindings_rofi.sh
